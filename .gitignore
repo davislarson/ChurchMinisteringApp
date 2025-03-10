@@ -7,51 +7,51 @@ yarn-error.log*
 # ==============================
 # Frontend (React)
 # ==============================
-frontend/node_modules/
-frontend/.npm/
-frontend/.yarn/
+**/node_modules/
+**/.npm/
+**/.yarn/
 
 # Build output
-frontend/build/
-frontend/dist/
+**/build/
+**/dist/
 
 # Environment variables
-frontend/.env*
+**/.env*
 
 # ==============================
 # Backend (.NET)
 # ==============================
-backend/bin/
-backend/obj/
+**/bin/
+**/obj/
 
 # NuGet packages
-backend/packages/
-backend/.nuget/
+**/packages/
+**/.nuget/
 
 # User-specific Visual Studio files
-backend/.vs/
-backend/*.suo
-backend/*.user
-backend/*.ide
-backend/*.sln.docstates
-backend/*.csproj.user
+**/.vs/
+**/*.suo
+**/*.user
+**/*.ide
+**/*.sln.docstates
+**/*.csproj.user
 
 # Rider / JetBrains settings
-backend/.idea/
-backend/.idea_modules/
-backend/workspace.xml
-backend/*.iml
+**/.idea/
+**/.idea_modules/
+**/workspace.xml
+**/*.iml
 
 # Environment variables
-backend/.env*
-backend/appsettings*.json
+**/.env*
+**/appsettings*.json
 
 # SQLite & Local Databases (Optional)
-backend/*.db
-backend/*.db-journal
-backend/migrations/
-backend/*.mdf
-backend/*.ldf
+**/*.db
+**/*.db-journal
+**/migrations/
+**/*.mdf
+**/*.ldf
 
 # ==============================
 # IDE-Specific (VS, Rider, VS Code)
