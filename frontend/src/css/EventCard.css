@@ -1,0 +1,35 @@
+.event-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left ;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .event-card .title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .event-card .subtitle {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 12px;
+  }
+  
+  .event-card .date {
+    font-size: 0.7rem;
+    color: #999;
+    margin-top: 10px;
+  }
