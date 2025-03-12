@@ -1,13 +1,12 @@
-import './App.css'
-import MenuPage from './components/MenuPage'
+import "./App.css";
+import HomePage from "./pages/HomePage";
 
 function App() {
-
   return (
     <>
-      <MenuPage />
+      <HomePage />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
