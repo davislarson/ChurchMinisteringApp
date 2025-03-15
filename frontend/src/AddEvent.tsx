@@ -3,31 +3,31 @@ import React, { useState } from 'react';
 interface MinisteringFormState {
     activity: string;
     activityDate: string;
-    year: number;
     familyName: string;
     availabilityTime: string;
-    edited: boolean;
     location: string;
     notes: string;
+    prayer: boolean;
+    serviceRendered: boolean;
 }
 
 const MinisteringForm: React.FC = () => {
     const [formState, setFormState] = useState<MinisteringFormState>({
         activity: '',
         activityDate: '',
-        year: new Date().getFullYear(),
         familyName: '',
         availabilityTime: '',
-        edited: false,
         location: '',
-        notes: ''
+        notes: '',
+        prayer: false,
+        serviceRendered: false,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value, type, checked } = e.target;
         setFormState({
             ...formState,
-            [name]: type === 'checkbox' ? checked : value
+            [name]: type === 'checkbox' ? checked : value,
         });
     };
 
@@ -39,23 +39,19 @@ const MinisteringForm: React.FC = () => {
 
     return (
         <>
+            <h1>LDS Ministering Activity</h1>
             <form onSubmit={handleSubmit}>
                 <label>Activity:</label>
-                <select name="activity" value={formState.activity} onChange={handleChange}>
+                <select name="activity" value={formState.activity} onChange={handleChange} required>
                     <option value="Friendly Visit">Visit</option>
-                    <option value="Blessing Request">Blessing Request</option>
-                    <option value="Cooking">Cooking</option>
-                    <option value="Movie_Game">Movie/Game</option>
-                    <option value="Hiking">Hiking</option>
-                    <option value="Chat">Chat</option>
-                    <option value="Scriptures">Scriptures</option>
+                    <option value="Blessing">Blessing</option>
+                    <option value="Prayer">Prayer</option>
+                    <option value="Service">Service</option>
+                    <option value="Scripture Study">Scripture Study</option>
                 </select>
 
                 <label>Activity Date:</label>
-                <input type="text" name="activityDate" value={formState.activityDate} onChange={handleChange} required />
-
-                <label>Year:</label>
-                <input type="number" name="year" value={formState.year} onChange={handleChange} required />
+                <input type="date" name="activityDate" value={formState.activityDate} onChange={handleChange} required />
 
                 <label>Family Name:</label>
                 <input type="text" name="familyName" value={formState.familyName} onChange={handleChange} required />
@@ -63,21 +59,25 @@ const MinisteringForm: React.FC = () => {
                 <label>Availability Time:</label>
                 <select name="availabilityTime" value={formState.availabilityTime} onChange={handleChange}>
                     <option value="morning">Morning</option>
-                    <option value="12 to 3pm">Afternoon</option>
-                    <option value="4 to 6pm">Evening (4-6pm)</option>
-                    <option value="Night">After 6</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
                 </select>
-
-                <label>Edited (Yes/No):</label>
-                <input type="checkbox" name="edited" checked={formState.edited} onChange={handleChange} />
 
                 <label>Location (Optional):</label>
                 <input type="text" name="location" value={formState.location} onChange={handleChange} />
 
-                <label>Notes (Max 25 characters, Optional):</label>
-                <input type="text" name="notes" value={formState.notes} onChange={handleChange} maxLength={25} />
+                <label>Notes (Optional):</label>
+                <input type="text" name="notes" value={formState.notes} onChange={handleChange} maxLength={100} />
 
-                <button type="submit">Add Event</button>
+                <div>
+                    <label><input type="checkbox" name="prayer" checked={formState.prayer} onChange={handleChange} /> Prayer</label>
+                </div>
+
+                <div>
+                    <label><input type="checkbox" name="serviceRendered" checked={formState.serviceRendered} onChange={handleChange} /> Service Rendered</label>
+                </div>
+
+                <button type="submit">Submit Ministering Report</button>
             </form>
         </>
     );
