@@ -17,6 +17,7 @@ function MenuPage() {
 				</svg>
 			),
 			label: "Home",
+			route: "/",
 		},
 		{
 			icon: (
@@ -32,6 +33,7 @@ function MenuPage() {
 				</svg>
 			),
 			label: "Calendar",
+			route: "/calendar",
 		},
 		{
 			icon: (
@@ -47,6 +49,7 @@ function MenuPage() {
 				</svg>
 			),
 			label: "Ideas/ AI",
+			route: "/ideas",
 		}
 	];
 
