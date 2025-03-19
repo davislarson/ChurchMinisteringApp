@@ -1,6 +1,6 @@
 import NavigationItem from "../elements/NavigationItem";
 
-function MenuPage() {
+function NavPage() {
 	const navigationItems = [
 		{
 			icon: (
@@ -16,6 +16,7 @@ function MenuPage() {
 				</svg>
 			),
 			label: "Home",
+			route: "/",
 		},
 		{
 			icon: (
@@ -31,6 +32,7 @@ function MenuPage() {
 				</svg>
 			),
 			label: "Calendar",
+			route: "/calendar",
 		},
 		{
 			icon: (
@@ -46,16 +48,17 @@ function MenuPage() {
 				</svg>
 			),
 			label: "Ideas/ AI",
+			route: "/ideas",
 		}
 	];
 
 	return (
 		<section className="p-4 mt-4 w-100 bg-black rounded shadow-sm">
 			{navigationItems.map((item, index) => (
-				<NavigationItem key={index} icon={item.icon} label={item.label} />
+				<NavigationItem key={index} icon={item.icon} label={item.label} route={item.route}  />
 			))}
 		</section>
 	);
 }
 
-export default MenuPage;
+export default NavPage;
