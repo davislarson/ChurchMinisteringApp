@@ -1,6 +1,6 @@
 import NavigationItem from "../elements/NavigationItem";
 
-function NavPage() {
+function MenuPage() {
 	const navigationItems = [
 		{
 			icon: (
@@ -61,4 +61,4 @@ function NavPage() {
 	);
 }
 
-export default NavPage;
+export default MenuPage;
