@@ -1,3 +1,4 @@
+import Footer from "../elements/Footer";
 import NavigationItem from "../elements/NavigationItem";
 
 function MenuPage() {
@@ -53,11 +54,16 @@ function MenuPage() {
 	];
 
 	return (
-		<section className="p-4 mt-4 w-100 bg-black rounded shadow-sm">
-			{navigationItems.map((item, index) => (
-				<NavigationItem key={index} icon={item.icon} label={item.label} route={item.route}  />
-			))}
-		</section>
+		<>
+			<section className="rounded nav-button-container">
+				{navigationItems.map((item, index) => (
+					<NavigationItem key={index} icon={item.icon} label={item.label} />
+				))}
+			</section>
+			<Footer />
+		</>
+		
+		
 	);
 }
 
