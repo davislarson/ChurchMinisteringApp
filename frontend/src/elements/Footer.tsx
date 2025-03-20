@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const Footer: React.FC = () => {
   return (
     <div className="footer">
-      <Link to={"/nav"}>
+      <Link to={"/nav"} className="text-decoration-none">
         <div className="hamburger-menu">
           &#9776; {/* Hamburger menu icon */}
         </div>
