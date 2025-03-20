@@ -57,7 +57,7 @@ function MenuPage() {
 		<>
 			<section className="rounded nav-button-container">
 				{navigationItems.map((item, index) => (
-					<NavigationItem key={index} icon={item.icon} label={item.label} />
+					<NavigationItem key={index} icon={item.icon} label={item.label} route={item.route} />
 				))}
 			</section>
 			<Footer />
