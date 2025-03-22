@@ -7,7 +7,7 @@ const router = Router([
   {path: "/", element: <HomePage />},
   {path: "/calendar", element: <CalendarPage />},
   {path:"/nav", element: <MenuPage />},
-  // (path:"/ideas", element: <AiPage />},)
+//   {path:"/ideas", element: <AiPage />},
 ]);
 
 function App() {
