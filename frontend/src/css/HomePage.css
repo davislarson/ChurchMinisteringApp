@@ -13,6 +13,14 @@
   background-color: #d1d5db; /* Slightly darker gray */
 }
 
+.bg-gray-custom {
+  background-color: #dfe3e6;
+}
+
+.bg-gray-custom:hover {
+  background-color: #9ca3af; /* darker gray on hover */
+}
+
 .center-div {
     display: flex;
     justify-content: center; /* Centers items horizontally */
