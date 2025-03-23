@@ -1,3 +1,4 @@
+import AiAssistantPage from "./pages/AiAssistantPage";
 import CalendarPage from "./pages/CalendarPage";
 import HomePage from "./pages/HomePage";
 import MenuPage from "./pages/MenuPage";
@@ -7,7 +8,7 @@ const router = Router([
   {path: "/", element: <HomePage />},
   {path: "/calendar", element: <CalendarPage />},
   {path:"/nav", element: <MenuPage />},
-  // (path:"/ideas", element: <AiPage />},)
+  {path:"/ideas", element: <AiAssistantPage />}
 ]);
 
 function App() {

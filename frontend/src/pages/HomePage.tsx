@@ -4,16 +4,37 @@ import Footer from "../elements/Footer";
 function HomePage() {
   return (
     <>
-      <h2>Home</h2>
-      <h3>Upcoming Events</h3>
-      <div className="center-div">
-        <button className="ministering-button">Minister with AI</button>
+      <div className="bg-white sticky-top py-5 text-center">
+        <h3 className="my-0">Home Page</h3>
       </div>
-      <EventCard
-        title={"Event Name Example"}
-        subtitle={"Event description example"}
-        date={"00/00/0000"}
-      />
+      <br />
+      <br />
+
+      <div className="center-div">
+        <button className="d-flex justify-content-center align-items-center gap-2 bg-gray-custom px-3 py-2 border-0 shadow-sm hover-bg-light rounded">
+          Minister with AI
+        </button>
+      </div>
+      <br />
+      <br />
+      <div className="center-div">
+        <button className="d-flex justify-content-center align-items-center gap-2 bg-gray-custom px-3 py-2 border-0 shadow-sm hover-bg-light rounded">
+          Calendar
+        </button>
+      </div>
+      <br />
+      <br />
+      <br />
+
+      <h4>Upcoming Events</h4>
+
+      <div className="center-div">
+        <EventCard
+          title={"Event Name Example"}
+          subtitle={"Event description example"}
+          date={"00/00/0000"}
+        />
+      </div>
       <Footer />
     </>
   );
