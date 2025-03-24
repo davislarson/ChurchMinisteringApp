@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import MenuPage from "./pages/MenuPage";
 import { createBrowserRouter as Router, RouterProvider } from "react-router";
 
+
 const router = Router([
   {path: "/", element: <HomePage />},
   {path: "/calendar", element: <CalendarPage />},
