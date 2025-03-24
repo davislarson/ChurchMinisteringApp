@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./css/MinisteringForm.css";
+// import { useNavigate } from "react-router-dom"; // Import navigation hook
 
 interface MinisteringFormState {
   activity: string;
@@ -13,6 +14,7 @@ interface MinisteringFormState {
 }
 
 const MinisteringForm: React.FC = () => {
+    // const navigate = useNavigate(); // Initialize navigate function
   const [formState, setFormState] = useState<MinisteringFormState>({
     activity: "",
     activityDate: "",
@@ -152,9 +154,18 @@ const MinisteringForm: React.FC = () => {
               </div>
             </div> */}
 
-            <button type="submit" className="btn btn-primary w-100">
-              Submit Ministering Report
-            </button>
+            <div className="d-flex justify-content-between">
+              <button
+                type="button"
+                className="btn btn-secondary w-50 me-2"
+                // onClick={() => navigate("/calendar")} // Navigate to CalendarPage
+              >
+                Cancel
+              </button>
+              <button type="submit" className="btn btn-primary w-50">
+                Submit Ministering Report
+              </button>
+            </div>
           </form>
         </div>
       </div>
