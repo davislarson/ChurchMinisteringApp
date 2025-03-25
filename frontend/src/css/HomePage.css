@@ -22,7 +22,31 @@
 }
 
 .center-div {
-    display: flex;
-    justify-content: center; /* Centers items horizontally */
-    align-items: center;     /* Centers items vertically (optional, if needed) */
+  display: flex;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically (optional, if needed) */
+}
+.typing-indicator .dots::after {
+  content: "";
+  display: inline-block;
+  animation: dots 1.2s steps(4, end) infinite;
+  vertical-align: middle;
+}
+
+@keyframes dots {
+  0% {
+    content: "";
   }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+}
