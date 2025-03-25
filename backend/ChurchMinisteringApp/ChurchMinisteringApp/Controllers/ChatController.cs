@@ -19,11 +19,7 @@
             _clientFactory = clientFactory;
             _apiKey = settings.Value.ApiKey;
         }
-        [HttpGet("ping")]
-        public IActionResult Ping()
-        {
-            return Ok("pong");
-        }
+
         [HttpPost]
         public async Task<ActionResult<ChatResponse>> Post([FromBody] ChatRequest request)
         {
@@ -37,7 +33,9 @@
                 messages = new[]
                 {
                 new { role = "system", content = "You are a helpful ministering assistant for members of The Church of Jesus Christ of Latter-day Saints." },
-                new { role = "user", content = request.Message }
+                new { role = "user", content = "I am a member of the church of jesus christ of latter day saints who wants to" +
+                " better learn how to fufill my ministering assignment. help me by giving me ideas of how I can minister in a christlike way." +
+                "be simple and short with your response. here is what I want specifcally: " + request.Message }
             }
             };
 
