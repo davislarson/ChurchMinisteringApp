@@ -1,5 +1,6 @@
 ﻿using ChurchMinisteringApp.Data;
 using Microsoft.EntityFrameworkCore;
+using ChurchMinisteringApp;
 
 
 var builder = WebApplication.CreateBuilder(args);
