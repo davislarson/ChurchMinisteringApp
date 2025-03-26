@@ -2,6 +2,7 @@ import { useState } from "react";
 import EventCard from "../elements/EventCard";
 import Footer from "../elements/Footer";
 import Calendar from "react-calendar";
+import { useNavigate } from "react-router-dom";
 import "react-calendar/dist/Calendar.css";
 
 // Define the type for events
@@ -15,6 +16,7 @@ type EventsMap = Record<string, Event[]>;
 
 function CalendarPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const navigate = useNavigate();
 
   // This is dummy data until the database is connected
   const events: EventsMap = {
@@ -94,7 +96,7 @@ function CalendarPage() {
           cursor: "pointer",
           zIndex: 1000,
         }}
-        onClick={() => alert("Create event button clicked!")}
+        onClick={() => navigate('/createEvent')}
       >
         Create
       </button>
