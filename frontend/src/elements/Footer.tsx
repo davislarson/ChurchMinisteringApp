@@ -1,13 +1,12 @@
 import React from "react";
 import "../css/Footer.css"; // Import the CSS file
-import { Link } from "react-router";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Footer: React.FC = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 
-	const goback = () => {
+	const goBack = () => {
 		if (location.pathname === "/nav") {
 			navigate(-1); // Go back to the previous page
 		} else {
@@ -17,7 +16,7 @@ const Footer: React.FC = () => {
 
 	return (
 		<div className="footer">
-			<button className="hamburger-menu" onClick={goback}>
+			<button className="hamburger-menu" onClick={goBack}>
 				&#9776; {/* Hamburger menu icon */}
 			</button>
 		</div>

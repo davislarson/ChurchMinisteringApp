@@ -3,8 +3,6 @@ import EventCard from "../elements/EventCard";
 import Footer from "../elements/Footer";
 import { useNavigate } from "react-router-dom";
 
-import { useNavigate } from "react-router-dom";
-
 function HomePage() {
   const navigate = useNavigate();
 
@@ -13,7 +11,6 @@ function HomePage() {
       <div className="bg-white sticky-top py-5 text-center">
         <h3 className="my-0">Home Page</h3>
       </div>
-      <br />
       <br />
 
       <div className="center-div">
