@@ -1,11 +1,12 @@
-using ChurchMinisteringApp;
+﻿using ChurchMinisteringApp.Data;
+using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddDbContext<MinisteringContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("MinisteringConnection")));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Add OpenAI settings to the container for chat capabilities
@@ -24,6 +25,8 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseHttpsRedirection();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -36,9 +39,10 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowReactApp");
 
 app.UseAuthorization();
+app.MapControllers(); // 💥 This MUST be here
 
-app.MapControllers();
-
+app.UseSwagger();
+app.UseSwaggerUI();
 
 
 app.Run();
