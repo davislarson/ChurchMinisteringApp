@@ -14,6 +14,7 @@
   
   /* Hamburger menu icon */
   .hamburger-menu {
+    all: unset;
     font-size: 30px;
     cursor: pointer;
     color: rgb(0, 0, 0);
