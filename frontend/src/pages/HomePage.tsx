@@ -1,6 +1,8 @@
 import "../css/HomePage.css";
 import EventCard from "../elements/EventCard";
 import Footer from "../elements/Footer";
+import { Link } from "react-router-dom";
+
 function HomePage() {
   return (
     <>
