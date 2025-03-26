@@ -3,6 +3,8 @@ import EventCard from "../elements/EventCard";
 import Footer from "../elements/Footer";
 import { useNavigate } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+
 function HomePage() {
   const navigate = useNavigate();
 
