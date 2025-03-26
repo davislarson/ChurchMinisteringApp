@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 function NavigationItem(props: { icon: React.ReactNode; label: string; route: string }) {
 	return (
