@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import "./css/MinisteringForm.css";
 import { useNavigate } from "react-router-dom"; // Import navigation hook
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS
+
+// Custom Toastify styles
+import "./css/customToastStyles.css"; // Make sure this path is correct
+
 
 interface MinisteringFormState {
   activity: string;
@@ -39,14 +45,24 @@ const MinisteringForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formState);
-    // Add your form submission logic here
+    
+    // Displaying the success toast message with custom styling
+    toast.success(
+      "Ministering activity successfully recorded! Keep loving, serving, and inviting everyone around you to come closer to Christ."
+    );
+
+    // Optionally, navigate to another page after the form is submitted
+    setTimeout(() => {
+      navigate('/calendar');
+    }, 2000); // Delay to let the toast show before navigating
   };
 
   return (
     <>
       <div className="container mt-5">
         <div className="card p-4">
-          <h1 className="text-center">LDS Ministering Activity </h1>
+          <h1 className="text-center">Ministering Activity </h1>
+          <br />  
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label">Activity:</label>
@@ -126,34 +142,6 @@ const MinisteringForm: React.FC = () => {
               />
             </div>
 
-            {/* No functionality in the database for these checkboxes below */}
-
-            {/* <div className="mb-3">
-              <div className="form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  name="prayer"
-                  checked={formState.prayer}
-                  onChange={handleChange}
-                />
-                <label className="form-check-label">Prayer</label>
-              </div>
-            </div>
-
-            <div className="mb-3">
-              <div className="form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  name="serviceRendered"
-                  checked={formState.serviceRendered}
-                  onChange={handleChange}
-                />
-                <label className="form-check-label">Service Rendered</label>
-              </div>
-            </div> */}
-
             <div className="d-flex justify-content-between">
               <button
                 type="button"
@@ -170,6 +158,9 @@ const MinisteringForm: React.FC = () => {
           </form>
         </div>
       </div>
+
+      {/* Toast container for showing notifications */}
+      <ToastContainer />
     </>
   );
 };

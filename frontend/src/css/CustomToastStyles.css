@@ -1,0 +1,28 @@
+/* customToastStyles.css */
+
+.Toastify__toast--success {
+  background-color: #007bff !important; /* Your desired blue color */
+  color: white !important; /* Ensure the text is white */
+}
+
+.Toastify__toast--success .Toastify__progress-bar {
+  background-color: #0056b3 !important; /* Slightly darker blue for progress bar */
+}
+
+.Toastify__toast-body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.Toastify__toast--error {
+  background-color: #dc3545 !important; /* Red color for errors */
+}
+
+.Toastify__toast--info {
+  background-color: #17a2b8 !important; /* Info color */
+}
+
+.Toastify__toast--warning {
+  background-color: #ffc107 !important; /* Warning color */
+}
