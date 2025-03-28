@@ -47,7 +47,6 @@ yarn-error.log*
 
 
 # SQLite & Local Databases (Optional)
-
 **/*.db-journal
 **/migrations/
 **/*.mdf
