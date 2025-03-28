@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../css/HomePage.css";
 import Footer from "../elements/Footer";
+import Navbar from "../elements/Navbar";
 // Define the structure of a message
 interface Message {
   sender: "user" | "assistant";
@@ -56,9 +57,7 @@ const AiAssistantPage: React.FC = () => {
     <>
       <div className="d-flex flex-column vh-100 bg-light">
         {/* Header */}
-        <header className="bg-white border-bottom shadow-sm p-3 text-center">
-          <h1 className="h5 mb-0 fw-semibold">AI Ministering Assistant</h1>
-        </header>
+        <Navbar headerTitle="Minister With AI" />
 
         {/* Chat Messages */}
         <main className="flex-grow-1 overflow-auto px-3 py-3">
