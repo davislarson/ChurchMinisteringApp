@@ -4,6 +4,13 @@ import Footer from "../elements/Footer";
 import Calendar from "react-calendar";
 import { useNavigate } from "react-router-dom";
 import "react-calendar/dist/Calendar.css";
+import Navbar from "../elements/Navbar";
+
+// Define the type for events
+interface Event {
+  title: string;
+  subtitle: string;
+}
 import { Event } from "../types/Event"; // Import the Event type
 import "../css/CalendarPage.css";
 
@@ -64,6 +71,10 @@ function CalendarPage() {
 
   return (
     <>
+      <Navbar headerTitle="Calendar" />
+      {/* I haven't been able to fix the error line from showing below, but it doesn't seem to break the site so idk */}
+      <Calendar onChange={(date: Date | Date[]) => handleDateChange(date)} />
+
       <br />
       <h2>Ministering Calendar</h2>
       <br />
@@ -121,7 +132,7 @@ function CalendarPage() {
           cursor: "pointer",
           zIndex: 1000,
         }}
-        onClick={() => navigate('/createEvent')}
+        onClick={() => navigate("/createEvent")}
       >
         Create
       </button>
