@@ -8,6 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+
 const router = Router([
   { path: "/", element: <HomePage /> },
   { path: "/calendar", element: <CalendarPage /> },

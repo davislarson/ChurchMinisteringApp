@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import EventCard from "../elements/EventCard";
 import Footer from "../elements/Footer";
 import Calendar from "react-calendar";
@@ -11,31 +11,22 @@ interface Event {
   title: string;
   subtitle: string;
 }
+import { Event } from "../types/Event"; // Import the Event type
+import "../css/CalendarPage.css";
 
 // Define the type for the events dictionary
 type EventsMap = Record<string, Event[]>;
 
 function CalendarPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [events, setEvents] = useState<EventsMap>({}); // Events state as a map of dates to events
   const navigate = useNavigate();
 
-  // This is dummy data until the database is connected
-  const events: EventsMap = {
-    "2025-03-17": [
-      { title: "Meeting at 10 AM", subtitle: "Discuss project updates" },
-      { title: "Lunch with Sarah", subtitle: "Catch up at the café" },
-    ],
-    "2025-03-18": [
-      { title: "Project deadline", subtitle: "Submit final draft" },
-      { title: "Call with client", subtitle: "Review contract details" },
-    ],
-  };
-
   // Handles Date Selection on calendar
-  const handleDateChange = (date: Date | Date[]) => {
+  const handleDateChange = (date: Date | Date[] | null) => {
     if (date instanceof Date) {
       setSelectedDate(date);
-    } else if (Array.isArray(date)) {
+    } else if (Array.isArray(date) && date.length > 0) {
       setSelectedDate(date[0]);
     } else {
       setSelectedDate(null);
@@ -48,6 +39,36 @@ function CalendarPage() {
       ? selectedDate.toISOString().split("T")[0]
       : "";
 
+  // Fetch events from the database (using an API endpoint)
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch("https://localhost:4000/api/Ministering/events");
+        if (response.ok) {
+          const data = await response.json();
+          console.log("Fetched events:", data);
+
+          const eventsMap: EventsMap = data.reduce((acc: EventsMap, event: Event) => {
+            const eventDate = event.date; // Assuming 'date' is the string in the format "YYYY-MM-DD"
+            if (!acc[eventDate]) {
+              acc[eventDate] = [];
+            }
+            acc[eventDate].push(event);
+            return acc;
+          }, {});
+
+          setEvents(eventsMap);
+        } else {
+          console.error("Failed to fetch events:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
   return (
     <>
       <Navbar headerTitle="Calendar" />
@@ -55,15 +76,29 @@ function CalendarPage() {
       <Calendar onChange={(date: Date | Date[]) => handleDateChange(date)} />
 
       <br />
+      <h2>Ministering Calendar</h2>
       <br />
-      <div>
-        {/* Shows the event schedule for a specific day */}
+      {/* Wrap the Calendar component in a div for centering */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "0 auto",
+          width: "fit-content",
+        }}
+      >
+        <Calendar onChange={(value) => handleDateChange(value)} />
+      </div>
+      <br />
+      <br />
+      <div className="events-container">
         <h3>
           Events for{" "}
           {formattedDate ? (
             formattedDate
           ) : (
-            <span style={{ color: "#a0a0a0" }}>Select a date</span>
+            <span style={{ color: "#a0a0a0" }}>*Please Select a date*</span>
           )}
         </h3>
         {/* gets event data for specific day */}
@@ -71,16 +106,16 @@ function CalendarPage() {
           events[formattedDate].map((event, index) => (
             <EventCard
               key={index}
-              title={event.title}
-              subtitle={event.subtitle}
-              date={formattedDate}
+              title={event.activity}
+              subtitle={`${event.address}`}
+              date={event.date}
             />
           ))
         ) : (
           <p>No events scheduled.</p>
         )}
       </div>
-
+      
       {/* floating create button */}
       <button
         style={{
@@ -88,8 +123,8 @@ function CalendarPage() {
           bottom: "80px",
           right: "20px",
           padding: "15px 30px",
-          backgroundColor: "#007da5",
-          color: "white",
+          backgroundColor: "#007bff",
+          color: "#e5e7eb",
           fontSize: "16px",
           borderRadius: "5px",
           border: "none",
@@ -110,3 +145,5 @@ function CalendarPage() {
 }
 
 export default CalendarPage;
+
+
