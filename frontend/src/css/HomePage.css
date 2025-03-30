@@ -24,6 +24,7 @@
 
 .center-div {
   display: flex;
+  flex-direction: column;
   justify-content: center; /* Centers items horizontally */
   align-items: center; /* Centers items vertically (optional, if needed) */
 }
