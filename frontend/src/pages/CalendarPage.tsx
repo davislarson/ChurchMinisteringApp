@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import EventCard from "../elements/EventCard";
-import Footer from "../elements/Footer";
+// import Footer from "../elements/Footer";
 import Calendar from "react-calendar";
 import { useNavigate } from "react-router-dom";
 import "react-calendar/dist/Calendar.css";
@@ -72,9 +72,6 @@ function CalendarPage() {
   return (
     <>
       <Navbar headerTitle="Calendar" />
-      {/* I haven't been able to fix the error line from showing below, but it doesn't seem to break the site so idk */}
-      <Calendar onChange={(date: Date | Date[]) => handleDateChange(date)} />
-
       <br />
       <h2>Ministering Calendar</h2>
       <br />
@@ -139,7 +136,7 @@ function CalendarPage() {
 
       <br />
       <br />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

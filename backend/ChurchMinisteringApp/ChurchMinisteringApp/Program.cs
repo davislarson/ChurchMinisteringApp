@@ -14,15 +14,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<OpenAISettings>(
     builder.Configuration.GetSection("OpenAI"));
 builder.Services.AddHttpClient();
-// builder.Services.AddCors(options =>
-// {
-//     options.AddPolicy("AllowReactApp", policy =>
-//     {
-//         policy.WithOrigins("http://localhost:3002") // your React dev server
-//               .AllowAnyHeader()
-//               .AllowAnyMethod();
-//     });
-// });
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // your React dev server
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 
 
@@ -37,10 +37,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
-// app.UseCors("AllowReactApp");
-app.UseCors(x => x.WithOrigins("http://localhost:3000"));
+app.UseCors("AllowReactApp");
+// app.UseCors(x => x.WithOrigins("http://localhost:3000"));
 
 app.UseAuthorization();
 app.MapControllers(); // 💥 This MUST be here

@@ -36,8 +36,7 @@
   width: 100%;
   background-color: #e7e8ea;
   color: black;
-  padding: 20px;
-  display: none; /* Initially hidden */
+  padding: 20px; /* Initially hidden */
   border-radius: 10px;
 }
 
@@ -63,4 +62,12 @@
 .menu li:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+/* Prevent button color change on click */
+.hamburger:focus,
+.hamburger:active {
+  background: #006285; /* Keep the same background color */
+  color: #e7e8ea; /* Keep the same text color */
+  outline: none; /* Remove the focus outline if needed */
 }

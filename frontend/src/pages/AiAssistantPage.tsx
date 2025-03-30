@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../css/HomePage.css";
-import Footer from "../elements/Footer";
+// import Footer from "../elements/Footer";
 import Navbar from "../elements/Navbar";
 // Define the structure of a message
 interface Message {
@@ -37,7 +37,7 @@ const AiAssistantPage: React.FC = () => {
   // Function to generate a response from the assistant
   const generateResponse = async (input: string): Promise<string> => {
     try {
-      const res = await fetch("http://localhost:5000/api/chat", {
+      const res = await fetch("https://localhost:4000/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -120,7 +120,7 @@ const AiAssistantPage: React.FC = () => {
         <br />
         <br />
         <footer className="bg-white border-top text-center py-2">
-          <Footer />
+          {/* <Footer /> */}
         </footer>
       </div>
     </>
