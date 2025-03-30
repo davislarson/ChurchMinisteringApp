@@ -37,7 +37,7 @@ const AiAssistantPage: React.FC = () => {
   // Function to generate a response from the assistant
   const generateResponse = async (input: string): Promise<string> => {
     try {
-      const res = await fetch("https://localhost:4000/api/chat", {
+      const res = await fetch("https://localhost:4000/api/Chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,9 +71,9 @@ const AiAssistantPage: React.FC = () => {
               }`}
             >
               <div
-                className={`event-card ${
+                className={`chat-response ${
                   msg.sender === "user"
-                    ? "bg- text-white"
+                    ? "bg-gray-custom"
                     : "bg-white text-black border"
                 }`}
                 style={{ maxWidth: "75%" }}
@@ -88,7 +88,7 @@ const AiAssistantPage: React.FC = () => {
         {isTyping && (
           <div className="d-flex mb-3 justify-content-start">
             <div
-              className="event-card bg-white border text-muted"
+              className="chat-response bg-white border text-muted"
               style={{ maxWidth: "75%" }}
             >
               <p className="mb-0 fst-italic typing-indicator">

@@ -10,11 +10,12 @@
 }
 
 .ministering-button:hover {
-  background-color: #d1d5db; /* Slightly darker gray */
+  background-color: #d1d5db;
 }
 
 .bg-gray-custom {
   background-color: #006285;
+  color: white; /* Text color */
 }
 
 .bg-gray-custom:hover {
@@ -49,4 +50,13 @@
   100% {
     content: "";
   }
+}
+
+.chat-response {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  gap: 10px; /* Space between the dots and the text */
+  font-size: 16px; /* Adjust font size as needed */
+  padding: 5px 10px;
+  border-radius: 5px;
 }
