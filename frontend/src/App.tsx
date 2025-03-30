@@ -3,6 +3,7 @@ import AiAssistantPage from "./pages/AiAssistantPage";
 import CalendarPage from "./pages/CalendarPage";
 import HomePage from "./pages/HomePage";
 import MenuPage from "./pages/MenuPage";
+import Navbar from "./elements/Navbar";
 import {
   createBrowserRouter as Router,
   RouterProvider,
@@ -15,6 +16,7 @@ const router = Router([
   { path: "/nav", element: <MenuPage /> },
   { path: "/ideas", element: <AiAssistantPage /> },
   { path: "/createEvent", element: <MinisteringForm /> },
+  { path: '/navHeader', element: <Navbar headerTitle="Ministering App"/>}
 ]);
 
 function App() {

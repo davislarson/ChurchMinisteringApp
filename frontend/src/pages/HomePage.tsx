@@ -1,9 +1,9 @@
 import "../css/HomePage.css";
 import EventCard from "../elements/EventCard";
-import Footer from "../elements/Footer";
+// import Footer from "../elements/Footer";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../elements/Navbar";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Event } from "../types/Event";
 import image from "../assets/Churchlogo.jpg"; // Import the image
 
@@ -35,7 +35,7 @@ function HomePage() {
   return (
     <>
       <Navbar headerTitle="Home" />
-      <div className="bg-white sticky-top py-5 text-center">
+      <div className="bg-white py-5 text-center">
         <img src={image} className="homepage-image" style={{ width: '75px', height: '50px' }} />
         <br />
         <br />
@@ -89,7 +89,7 @@ function HomePage() {
         )}
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

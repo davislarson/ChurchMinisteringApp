@@ -1,4 +1,4 @@
-import Footer from "../elements/Footer";
+// import Footer from "../elements/Footer";
 import NavigationItem from "../elements/NavigationItem";
 
 function MenuPage() {
@@ -65,7 +65,7 @@ function MenuPage() {
           />
         ))}
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
