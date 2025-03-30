@@ -29,7 +29,6 @@ function HomePage() {
     setEvents(upcomingEvents); // Set the state with the filtered events
   };
 
-  fetchUpcomingEvents(); // Call the function to fetch events
 
   console.log(events); // Check if events is an array and contains data
   return (
@@ -69,8 +68,6 @@ function HomePage() {
       </div>
       <br />
       <br />
-      <br />
-
       <h4>Upcoming Events</h4>
 
       <div className="center-div">
