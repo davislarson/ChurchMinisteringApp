@@ -1,0 +1,73 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7e8ea;
+  color: black;
+  padding: 10px;
+  width: 100%;
+}
+
+.header-title {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.hamburger {
+  all: unset;
+  font-size: 30px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  padding-left: 15px;
+}
+
+.menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: #e7e8ea;
+  color: black;
+  padding: 20px; /* Initially hidden */
+  border-radius: 10px;
+}
+
+.menu.open {
+  display: block; /* Display menu when "open" class is active */
+}
+
+.menu.closed {
+  display: none; /* Hide menu when "closed" class is active */
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 10px 0;
+  text-align: left;
+}
+
+.menu li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Prevent button color change on click */
+.hamburger:focus,
+.hamburger:active {
+  background-color: #e7e8ea; /* Keep the same background color */
+  color: black; /* Keep the same text color */
+  outline: none; /* Remove the focus outline if needed */
+}
+
+/* Invisible spacer on the right */
+.spacer {
+  width: 45px; /* same width as hamburger */
+  height: 1px;
+  opacity: 0;
+}

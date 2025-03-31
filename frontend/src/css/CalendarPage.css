@@ -1,0 +1,96 @@
+/* Center the events container */
+.events-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally centers the content */
+    justify-content: center; /* Vertically centers the content if there's extra space */
+    text-align: center; /* Optional: centers the text inside the container */
+  }
+  
+  /* Center the event list */
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center the individual EventCard components */
+    justify-content: center;
+    gap: 20px; /* Space between event cards */
+    width: 100%; /* Ensures the events don't extend too wide */
+  }
+
+  .create-button {
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    background-color: #e5e7eb; /* Light gray */
+    padding: 12px 16px;
+    border: none;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .create-button:hover {
+    background-color: #d1d5db; /* Slightly darker gray */
+  }
+
+  /* CalendarPage.css */
+
+.c {
+  background-color: #f8f9fa; /* Soft gray background */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.c button {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.c button:enabled:hover {
+  background-color: #dee2e6;
+  cursor: pointer;
+}
+
+.c .react-calendar__tile--now {
+  background-color: #a3bdd3; /* Highlight today */
+  border-radius: 8px;
+}
+
+.c .react-calendar__tile--active,
+.c .react-calendar__tile--active:focus {
+  background-color: #19496f;
+  color: white;
+  border-radius: 8px;
+}
+
+
+
+.c .react-calendar__navigation {
+  margin-bottom: 10px;
+}
+
+.c .react-calendar__navigation button {
+  font-weight: bold;
+  color: #19496f;
+}
+
+.c abbr {
+  text-decoration: none;
+}
+
+.c .react-calendar__tile {
+  color: black;
+}
+.c .react-calendar__month-view__days__day--neighboringMonth {
+  color: #bbb; /* light gray */
+}
+
+.c .react-calendar__month-view__weekdays abbr {
+  text-decoration: none;
+  border-bottom: none;
+}

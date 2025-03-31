@@ -1,0 +1,62 @@
+/* MinisteringForm.css */
+.ministering-form-container {
+  width: 90%; /* Makes it responsive, smaller on larger screens */
+  max-width: 600px; /* Sets the maximum width to 600px */
+  margin: 50px auto; /* Centers the form horizontally and adds some top margin */
+  padding: 20px; /* Adds padding inside the container */
+  background-color: #f9f9f9; /* Light background color */
+  border: 2px solid #ccc; /* Border around the form */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 24px; /* Slightly smaller heading */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  background: #19496f;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
