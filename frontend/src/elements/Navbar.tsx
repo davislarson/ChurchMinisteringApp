@@ -20,6 +20,7 @@ function Navbar({ headerTitle }: NavbarProps) {
 				☰
 			</button>
 			<h5 className="header-title">{headerTitle}</h5>
+			<div className="spacer" /> {/* Invisible right-side spacer */}
 			<div className={`menu ${isOpen ? "open" : "closed"}`}>
 				<ul className="navbar-nav justify-content-start">
 					<li

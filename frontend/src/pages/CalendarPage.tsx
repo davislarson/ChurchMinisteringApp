@@ -5,12 +5,6 @@ import Calendar from "react-calendar";
 import { useNavigate } from "react-router-dom";
 import "react-calendar/dist/Calendar.css";
 import Navbar from "../elements/Navbar";
-
-// Define the type for events
-interface Event {
-  title: string;
-  subtitle: string;
-}
 import { Event } from "../types/Event"; // Import the Event type
 import "../css/CalendarPage.css";
 
@@ -43,19 +37,24 @@ function CalendarPage() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch("https://localhost:4000/api/Ministering/events");
+        const response = await fetch(
+          "https://localhost:4000/api/Ministering/events"
+        );
         if (response.ok) {
           const data = await response.json();
           console.log("Fetched events:", data);
 
-          const eventsMap: EventsMap = data.reduce((acc: EventsMap, event: Event) => {
-            const eventDate = event.date; // Assuming 'date' is the string in the format "YYYY-MM-DD"
-            if (!acc[eventDate]) {
-              acc[eventDate] = [];
-            }
-            acc[eventDate].push(event);
-            return acc;
-          }, {});
+          const eventsMap: EventsMap = data.reduce(
+            (acc: EventsMap, event: Event) => {
+              const eventDate = event.date; // Assuming 'date' is the string in the format "YYYY-MM-DD"
+              if (!acc[eventDate]) {
+                acc[eventDate] = [];
+              }
+              acc[eventDate].push(event);
+              return acc;
+            },
+            {}
+          );
 
           setEvents(eventsMap);
         } else {
@@ -85,7 +84,10 @@ function CalendarPage() {
           width: "fit-content",
         }}
       >
-        <Calendar onChange={(value) => handleDateChange(value)} />
+        <Calendar
+          className={"c"}
+          onChange={(value) => handleDateChange(value as Date)}
+        />
       </div>
       <br />
       <br />
@@ -104,7 +106,7 @@ function CalendarPage() {
             <EventCard
               key={index}
               title={event.activity}
-              subtitle={`${event.address}`}
+              subtitle={event.address}
               date={event.date}
             />
           ))
@@ -112,7 +114,7 @@ function CalendarPage() {
           <p>No events scheduled.</p>
         )}
       </div>
-      
+
       {/* floating create button */}
       <button
         style={{
@@ -120,7 +122,7 @@ function CalendarPage() {
           bottom: "80px",
           right: "20px",
           padding: "15px 30px",
-          backgroundColor: "#007bff",
+          backgroundColor: "#19496f",
           color: "#e5e7eb",
           fontSize: "16px",
           borderRadius: "5px",
@@ -142,5 +144,3 @@ function CalendarPage() {
 }
 
 export default CalendarPage;
-
-
