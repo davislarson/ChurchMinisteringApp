@@ -117,8 +117,7 @@ const AiAssistantPage: React.FC = () => {
             </button>
           </div>
         </form>
-        <br />
-        <br />
+
         <footer className="bg-white border-top text-center py-2">
           {/* <Footer /> */}
         </footer>

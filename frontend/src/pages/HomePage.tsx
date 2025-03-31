@@ -35,18 +35,13 @@ function HomePage() {
     <>
       <Navbar headerTitle="Home" />
       <div className="bg-white py-5 text-center">
-        <img src={image} className="homepage-image" style={{ width: '75px', height: '50px' }} />
+        <img src={image} className="homepage-image rounded" style={{ width: '300px', height: '175px' }} />
         <br />
         <br />
         <h2 className="my-0">
-          Welcome to the Church of Jesus Christ's new ministering app, Addy!
+          Welcome!
         </h2>
-        <br />
-        <h4 className="my-0">
-          Choose from options below to kickstart your ministering efforts!
-        </h4>
       </div>
-      <br />
 
       <div className="center-div">
         <button

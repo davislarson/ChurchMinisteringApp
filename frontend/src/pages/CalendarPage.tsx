@@ -120,7 +120,7 @@ function CalendarPage() {
           bottom: "80px",
           right: "20px",
           padding: "15px 30px",
-          backgroundColor: "#007bff",
+          backgroundColor: "#19496f",
           color: "#e5e7eb",
           fontSize: "16px",
           borderRadius: "5px",

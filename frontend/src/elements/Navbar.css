@@ -15,18 +15,11 @@
 }
 
 .hamburger {
-  position: absolute;
-  background: #006285;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-left: 10px;
-  border: none;
-  color: #e7e8ea;
-  font-size: 24px;
+  all: unset;
+  font-size: 30px;
   cursor: pointer;
-  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  padding-left: 15px;
 }
 
 .menu {
@@ -67,7 +60,14 @@
 /* Prevent button color change on click */
 .hamburger:focus,
 .hamburger:active {
-  background: #006285; /* Keep the same background color */
-  color: #e7e8ea; /* Keep the same text color */
+  background-color: #e7e8ea; /* Keep the same background color */
+  color: black; /* Keep the same text color */
   outline: none; /* Remove the focus outline if needed */
+}
+
+/* Invisible spacer on the right */
+.spacer {
+  width: 45px; /* same width as hamburger */
+  height: 1px;
+  opacity: 0;
 }
