@@ -150,7 +150,7 @@ const MinisteringForm: React.FC = () => {
               >
                 Cancel
               </button>
-              <button type="submit" className="btn btn-primary w-50"
+              <button type="submit" className="btn btn-primary w-50" style={{background:'#19496f'}}
               onClick={() => navigate('/calendar')}> {/* Navigate to CalendarPage */}
                 Submit Ministering Report
               </button>
